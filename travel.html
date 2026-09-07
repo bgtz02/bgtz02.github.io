@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="First Name Last Name personal portfolio.">
+  <title>Travel | First Name Last Name</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-name" href="index.html">First Name Last Name</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span><span class="sr-only">Open navigation</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="interests.html" >Interests</a>
+      <a href="hobbies.html" >Hobbies</a>
+      <a href="travel.html" class="active">Travel</a>
+      <a href="cooking.html" >Cooking</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="page-intro container reveal">
+  <p class="eyebrow">03 / Travel</p>
+  <h1>Places I’ve been, and the reasons I remember them.</h1>
+  <p class="lead">Destinations will be grouped by state or country. Each entry is designed around photography first, with a short story alongside it.</p>
+</section>
+<section class="section container travel-section">
+  <!-- Each .travel-group is collapsible. Duplicate a group when adding another state/country. -->
+  <details class="travel-group" open>
+    <summary><span>United States</span><span class="summary-hint">Expand / collapse</span></summary>
+    <div class="travel-entry">
+      <div class="travel-image placeholder-image"><span>Travel Photo</span></div>
+      <div class="travel-story"><span class="location-tag">State Placeholder</span><h2>First destination</h2><p>Why I wanted to visit this place, what I did while I was there, and my favorite thing about the experience.</p></div>
+    </div>
+    <div class="travel-entry reverse">
+      <div class="travel-image placeholder-image"><span>Travel Photo</span></div>
+      <div class="travel-story"><span class="location-tag">State Placeholder</span><h2>Second destination</h2><p>A second story can alternate the image and text positions, creating the staggered visual rhythm you described.</p></div>
+    </div>
+  </details>
+
+  <details class="travel-group">
+    <summary><span>Other Countries</span><span class="summary-hint">Expand / collapse</span></summary>
+    <div class="travel-entry">
+      <div class="travel-image placeholder-image"><span>Travel Photo</span></div>
+      <div class="travel-story"><span class="location-tag">Country Placeholder</span><h2>First international destination</h2><p>Tell the short version of why you went, what made the place memorable, and your favorite part of the trip.</p></div>
+    </div>
+  </details>
+</section></main>
+<footer class="site-footer"><div class="container"><p>© <span id="year"></span> First Name Last Name. Built as a living portfolio.</p></div></footer>
+<script src="js/site.js"></script>
+</body>
+</html>

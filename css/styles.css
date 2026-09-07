@@ -1,0 +1,292 @@
+:root {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --text: #1c1c1a;
+  --muted: #686861;
+  --line: #deddd6;
+  --accent: #315c56;
+  --accent-soft: #e4ece9;
+  --max-width: 1180px;
+  --radius: 18px;
+  --shadow: 0 18px 45px rgba(25, 30, 28, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container { width: min(calc(100% - 40px), var(--max-width)); margin-inline: auto; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(246, 245, 241, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(222, 221, 214, 0.9);
+}
+
+.header-inner {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.site-name {
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: 1.1rem;
+}
+
+.site-nav { display: flex; gap: 8px; align-items: center; }
+.site-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 9px 13px;
+  border-radius: 10px;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.site-nav a:hover, .site-nav a.active {
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: 0 5px 18px rgba(25,30,28,.05);
+}
+.site-nav a:hover { transform: translateY(-1px); }
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  cursor: pointer;
+}
+.menu-toggle span:not(.sr-only) {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--text);
+  margin: 5px 0;
+}
+
+.hero {
+  min-height: 72vh;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 70px;
+  padding-block: 90px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 { line-height: 1.12; margin-top: 0; }
+h1 { font-size: clamp(2.8rem, 7vw, 5.8rem); letter-spacing: -.06em; margin-bottom: 24px; }
+h1 span { color: var(--accent); }
+h2 { font-size: clamp(1.8rem, 3vw, 3rem); letter-spacing: -.04em; }
+h3 { font-size: 1.25rem; }
+
+.lead { font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--muted); max-width: 700px; }
+
+.profile-placeholder, .placeholder-image {
+  background: linear-gradient(135deg, #e3e2dc, #d3d4cc);
+  color: #686861;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.profile-placeholder {
+  aspect-ratio: 4 / 5;
+  max-width: 430px;
+  width: 100%;
+  justify-self: end;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  flex-direction: column;
+}
+.profile-placeholder span { font-size: 1.3rem; font-weight: 800; }
+.profile-placeholder small { margin-top: 6px; }
+
+.social-links { display: flex; gap: 10px; margin-top: 30px; }
+.social-icon {
+  width: 44px; height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-weight: 800;
+  background: var(--surface);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.social-icon:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.social-icon.coming-soon { opacity: .55; }
+
+.section { padding-block: 85px; }
+.section-heading { max-width: 700px; margin-bottom: 35px; }
+
+.card-grid, .content-grid, .recipe-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.feature-card, .content-card, .recipe-card, .project-card, .story-banner {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.feature-card {
+  padding: 32px;
+  min-height: 250px;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.card-number { color: var(--accent); font-size: .8rem; font-weight: 900; letter-spacing: .12em; }
+.feature-card h3 { margin: 50px 0 10px; font-size: 1.7rem; }
+
+.page-intro { padding-block: 110px 55px; max-width: 1000px; }
+.page-intro h1 { font-size: clamp(2.7rem, 6vw, 5rem); }
+
+.content-card { padding: 32px; }
+.project-list { display: grid; gap: 22px; }
+.project-card { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
+.placeholder-image { min-height: 280px; border-radius: 13px; }
+.placeholder-image.wide { min-height: 330px; }
+
+.travel-section { padding-top: 20px; }
+.travel-group {
+  border-top: 1px solid var(--line);
+  padding-block: 22px;
+}
+.travel-group:last-child { border-bottom: 1px solid var(--line); }
+.travel-group summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+}
+.travel-group summary::-webkit-details-marker { display: none; }
+.summary-hint { font-size: .75rem; color: var(--muted); font-weight: 600; }
+.travel-entry {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 55px;
+  align-items: center;
+  padding: 55px 0;
+}
+.travel-entry.reverse { grid-template-columns: .85fr 1.15fr; }
+.travel-entry.reverse .travel-image { order: 2; }
+.travel-entry.reverse .travel-story { order: 1; }
+.travel-image { min-height: 460px; }
+.location-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.travel-story p { color: var(--muted); }
+
+.story-banner { padding: 30px; margin-bottom: 25px; font-size: 1.15rem; }
+.recipe-card { overflow: hidden; }
+.recipe-image { min-height: 390px; border-radius: 0; }
+.recipe-content { padding: 34px; }
+.recipe-content h3 { margin: 28px 0 8px; font-size: 1rem; }
+.recipe-content p, .recipe-content li { color: var(--muted); }
+
+.site-footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--line);
+  padding-block: 30px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.reveal {
+  animation: rise-in .65s ease both;
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Tablet and phone behavior. The staggered Travel layout becomes a simple
+   image-then-story stack so nothing gets squeezed or causes horizontal scroll. */
+@media (max-width: 800px) {
+  .header-inner { min-height: 75px; }
+  .menu-toggle { display: block; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    left: 20px; right: 20px; top: 70px;
+    padding: 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a { padding: 13px; }
+
+  .hero { grid-template-columns: 1fr; gap: 45px; padding-block: 65px; }
+  .profile-placeholder { justify-self: start; max-width: 350px; }
+
+  .card-grid, .content-grid, .project-card, .recipe-grid,
+  .travel-entry, .travel-entry.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-entry.reverse .travel-image,
+  .travel-entry.reverse .travel-story { order: initial; }
+  .travel-image { min-height: 300px; }
+  .page-intro { padding-block: 70px 35px; }
+}
+
+@media (max-width: 480px) {
+  .container { width: min(calc(100% - 28px), var(--max-width)); }
+  h1 { font-size: clamp(2.5rem, 14vw, 4rem); }
+  .hero { padding-block: 50px; }
+  .section { padding-block: 60px; }
+  .feature-card, .content-card { padding: 25px; }
+  .travel-group summary { font-size: 1.35rem; }
+  .summary-hint { display: none; }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

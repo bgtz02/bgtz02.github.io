@@ -1,58 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Your Page Title</title>
-
-    <!-- Meta Description for SEO -->
-    <meta name="description" content="A brief description of your web page content.">
-
-    <!-- Link to your external CSS file -->
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Embedded fallback styles */
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-
-        container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio and living record of professional work, interests, hobbies, travel, and cooking.">
+  <title>First Name Last Name | Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
+  <!-- Site-wide header. Replace the placeholder name when ready. -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="index.html">First Name Last Name</a>
 
-    <div class="container">
-        <header>
-            <h1>Welcome to My Website</h1>
-        </header>
+      <!-- Mobile menu button. JavaScript opens/closes the navigation on small screens. -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Open navigation</span>
+      </button>
 
-        <main>
-            <p>This is a simple, clean HTML template ready for your content.</p>
-        </main>
-
-        <footer>
-            <p>&copy; 2026 Your Name or Brand</p>
-        </footer>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="interests.html">Interests</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="travel.html">Travel</a>
+        <a href="cooking.html">Cooking</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Link to your external JavaScript file -->
-    <script src="script.js"></script>
+  <main>
+    <!-- Hero / landing section -->
+    <section class="hero container">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Personal Portfolio</p>
+        <h1>Analyst by profession. <span>Curious by nature.</span></h1>
+        <p class="lead">
+          I’m an Analyst at American Airlines, where I have spent the last five years
+          growing in a corporate environment I entered right out of high school.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. This space is intentionally ready
+          for your own professional introduction, career story, and current responsibilities.
+        </p>
+
+        <div class="social-links" aria-label="Social links">
+          <!-- Replace "#" with your real profile URLs when ready. -->
+          <a class="social-icon" href="#" aria-label="LinkedIn" title="LinkedIn">in</a>
+          <a class="social-icon coming-soon" href="#" aria-label="X coming soon" title="X — Coming Soon">X</a>
+          <a class="social-icon coming-soon" href="#" aria-label="Reddit coming soon" title="Reddit — Coming Soon">r/</a>
+          <!-- Optional fourth social link. Delete this line if you don't need it. -->
+          <a class="social-icon coming-soon" href="#" aria-label="Additional social link" title="Additional link">+</a>
+        </div>
+      </div>
+
+      <div class="profile-placeholder reveal" aria-label="Profile photo placeholder">
+        <span>Profile Photo</span>
+        <small>Replace this placeholder later</small>
+      </div>
+    </section>
+
+    <!-- Short introduction to the rest of the site. -->
+    <section class="section container">
+      <div class="section-heading">
+        <p class="eyebrow">Explore</p>
+        <h2>A portfolio that grows with me.</h2>
+        <p>Use the sections below to explore the professional and personal sides of my life.</p>
+      </div>
+
+      <div class="card-grid">
+        <a class="feature-card" href="interests.html">
+          <span class="card-number">01</span>
+          <h3>Interests</h3>
+          <p>Technology, professional interests, certifications, and the things I am learning next.</p>
+        </a>
+        <a class="feature-card" href="hobbies.html">
+          <span class="card-number">02</span>
+          <h3>Hobbies</h3>
+          <p>Mini projects, 3D printing, experiments, and the things I build simply because I can.</p>
+        </a>
+        <a class="feature-card" href="travel.html">
+          <span class="card-number">03</span>
+          <h3>Travel</h3>
+          <p>A visual record of places I have visited, why I went, and what stayed with me.</p>
+        </a>
+        <a class="feature-card" href="cooking.html">
+          <span class="card-number">04</span>
+          <h3>Cooking</h3>
+          <p>A personal journey of learning to recreate the flavors and memories of childhood.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> First Name Last Name. Built as a living portfolio.</p>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
 </body>
-
 </html>
